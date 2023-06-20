@@ -30,9 +30,9 @@ let Image = (index) => {
     const indicators = document.querySelectorAll('.indicator p');
     const sliderInfo = document.querySelector('.slider-info');
     sliderImage[index].classList.add('slider-image-active');
-    reset(indicators, 'indicator-active');
+    // reset(indicators, 'indicator-active');
 
-    indicators[i].classList.add('indicator-active');
+    // indicators[i].classList.add('indicator-active');
     
     if (content.hasElement(".slider-info")) return sliderInfo.textContent = sliderImage[index].dataset.info;
     // createInfo(sliderImage[index].dataset.info);   
@@ -56,6 +56,7 @@ let moveImage = () => {
 
 btnChevron.forEach(btn => {
     btn.addEventListener('click', () => {
+        console.log('ic mi vric');
         if (btn.dataset.action == "right") {
             i++;
             return moveImage();

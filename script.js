@@ -30,7 +30,6 @@ function checkKey(e) {
 
     e = e || window.event;
     if (e.keyCode == '37') {
-      console.log('1231')
       currentIndex = (currentIndex - 1) % images[currentProject].length;
       enlargedImage.src = images[currentProject][currentIndex];
     }
