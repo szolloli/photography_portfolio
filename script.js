@@ -1,11 +1,14 @@
 
+
+//, 'assets/img005.jpg', 'assets/img006.jpg', 'assets/img008.jpg'],
 var images = {
-    'project1': ['assets/img004.jpg', 'assets/img005.jpg', 'assets/img006.jpg', 'assets/img008.jpg'],
+    'project1': ['assets/01.jpeg'],
     'project2': ['image4.jpg', 'image5.jpg', 'image6.jpg'],
     'project3': ['image7.jpg', 'image8.jpg', 'image9.jpg']
 };
 
 var currentProject = null;
+var currentIndex = 0;
 
 function openGallery(projectName) {
   currentProject = projectName;
@@ -17,15 +20,10 @@ function openGallery(projectName) {
 
   var projectImages = images[projectName];
 
-  for (var i = 0; i < projectImages.length; i++) {
-    var imageElement = document.createElement('img');
-    imageElement.src = projectImages[i];
-    imageElement.addEventListener('click', enlargeImage);
-    galleryElement.appendChild(imageElement);
-  }
+  enlargeImage(currentIndex);
 }
 
-var currentIndex = 0;
+
 var enlargedImage = null;
 
 function checkKey(e) {
@@ -43,29 +41,27 @@ function checkKey(e) {
 
 }
 
-function enlargeImage(event) {
-  var galleryImages = document.querySelectorAll('#gallery img');
-  var currentIndex = Array.from(galleryImages).indexOf(event.target);
 
-  var overlay = document.createElement('div');
-  overlay.className = 'overlay';
-  overlay.addEventListener('click', closeEnlargedView); 
+
+function enlargeImage(index) {
+
+  var galleryImages = document.querySelectorAll('#gallery img');
+  var gallery = document.getElementById('gallery')
+
+  //var overlay = document.createElement('div');
+  //overlay.className = 'overlay';
+  //overlay.addEventListener('click', closeEnlargedView); 
 
   var imageContainer = document.createElement('div');
   imageContainer.className = 'image-container';
 
 
   enlargedImage = document.createElement('img');
-  enlargedImage.src = event.target.src;
+  console.log(images);
+  enlargedImage.src = images[currentProject][currentIndex];
   enlargedImage.className = 'enlarged-image';
   document.onkeydown = checkKey;
 
-
-
-  var closeButton = document.createElement('span');
-  closeButton.innerHTML = '&times;';
-  closeButton.className = 'close-button';
-  closeButton.addEventListener('click', closeEnlargedView);
 
   var prevButton = document.createElement('span');
   prevButton.innerHTML = '&#8249;';
@@ -77,11 +73,10 @@ function enlargeImage(event) {
   nextButton.className = 'nav-button';
   nextButton.addEventListener('click', navigateImages.bind(null, currentIndex + 1));
 
-  imageContainer.appendChild(closeButton);
   imageContainer.appendChild(prevButton);
   imageContainer.appendChild(enlargedImage);
   imageContainer.appendChild(nextButton);
-  overlay.appendChild(imageContainer);
+  gallery.appendChild(imageContainer);
 
   document.body.appendChild(overlay);
 }
