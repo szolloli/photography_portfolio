@@ -1,6 +1,6 @@
 const content = document.querySelector(".content");
 const slider = document.querySelector(".slider");
-const sliderImage = Array.from(document.querySelectorAll(".slider-image"));
+let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
 const btnChevron = document.querySelectorAll(".btn-chevron");
 let i = 0;
 
@@ -39,7 +39,10 @@ let Image = (index) => {
 }
 
 let setPosition = (index) => {
+    
+    // sliderImage = Array.from(document.querySelectorAll(".slider-image"));
     let width = sliderImage[index].getBoundingClientRect().width;
+    console.log(width, index);
     slider.style.transform = `translateX(-${width * index}px)`;
 }
 

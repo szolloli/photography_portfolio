@@ -13,12 +13,14 @@
 
 </head>
 <body>
+  <a id="instagram" href="https://www.instagram.com/s.oliver.s/" target="_blank">instagram ↗</a>
   <div class="menu">
     <h1>oliver szollosi</h1>
     <ul id="project-list">
-      <li onclick="openGallery('project1')">Editorial</li>
-      <li onclick="openGallery('project2')">Where you are</li>
-      <li onclick="openGallery('project3')">Contact</li>
+      <li class='selected-album'id='neuart' onclick="openGallery('neuart')">Editorial</li>
+      <li id='edge' onclick="openGallery('edge')">Edge</li>
+      <li id='where_you_are' onclick="openGallery('where_you_are')">Where you are</li>
+      <li  id='contact' onclick="openGallery('contact')">Contact</li>
       <!-- Add more projects as needed -->
     </ul>
   </div>
@@ -30,27 +32,34 @@
 
 
   <div class="arrow-content">
-
-
+    <div class="real-arrow-content">
+    <p data-action="left" class='btn-chevron left bx bx-chevron-left'>
+      <span class="material-symbols-outlined">
+        arrow_back_ios_new
+        </span>
+    </p>
 
       <div class="content">
-        <p data-action="left" class='btn-chevron left bx bx-chevron-left'>
-          <span class="material-symbols-outlined">
-            arrow_back_ios_new
-            </span>
-        </p>
-        <div class="slider">
+
+        <div id="slider" class="slider">
           <img data-info="Image Description 1" class="slider-image" src="assets/01.jpeg">
-          <img data-info="Image Description 2" class="slider-image" src="assets/01.jpeg">
-          <img data-info="Image Description 3" class="slider-image" src="assets/01.jpeg">
+          <!-- <img data-info="Image Description 2" class="slider-image" src="assets/neuart/000015.JPG">
+          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000017.JPG">
+          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000012.JPG">
+
+          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000025.JPG">
+
+          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000028.JPG"> -->
         </div>
-        <p data-action="right" class='btn-chevron right bx bx-chevron-right'>
-          <span class="material-symbols-outlined">
-            arrow_forward_ios
-            </span>
-        </p>
+
       </div>
 
+      <p data-action="right" class='btn-chevron right bx bx-chevron-right'>
+        <span class="material-symbols-outlined">
+          arrow_forward_ios
+          </span>
+      </p>
+      </div>
 
     <!-- </div> -->
   </div>
@@ -60,7 +69,7 @@
   <script src="script1.js"></script>
 </body>
 <footer>
-  © 2023 Oliver Szöllösi
+  © 2023 Oliver Szöllösi | by RIGøSHI
 </footer>
 </html>
 

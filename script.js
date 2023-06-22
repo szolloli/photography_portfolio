@@ -2,25 +2,56 @@
 
 //, 'assets/img005.jpg', 'assets/img006.jpg', 'assets/img008.jpg'],
 var images = {
-    'project1': ['assets/01.jpeg'],
-    'project2': ['image4.jpg', 'image5.jpg', 'image6.jpg'],
-    'project3': ['image7.jpg', 'image8.jpg', 'image9.jpg']
+    'neuart': ['000015.JPG','000017.JPG','000012.JPG','000025.JPG','000028.JPG'],
+    'where_you_are': ['image4.jpg', 'image5.jpg', 'image6.jpg'],
+    'editorial': ['image7.jpg', 'image8.jpg', 'image9.jpg'],
+    'edge': ['szolloli_01_portret.jpeg','szolloli_02_portret.jpeg','szolloli_03_portret.jpeg','szolloli_04_portret.jpeg',
+    'szolloli_05_portret.jpeg','szolloli_06_portret.jpeg','szolloli_07_portret.jpeg',
+    'szolloli_09_portret.jpeg','szolloli_10_portret.jpeg']
 };
 
-var currentProject = null;
+
+
+
+var currentProject = 'neuart';
 var currentIndex = 0;
 
 function openGallery(projectName) {
+
+  var oldAlbum = document.getElementById(currentProject);
+  oldAlbum.removeAttribute('class');
+
+  var album = document.getElementById(projectName);
+  album.className = 'selected-album';
+
   currentProject = projectName;
-  var galleryElement = document.getElementById('gallery');
-  galleryElement.innerHTML = ""; // Clear existing gallery
+  var slider = document.getElementById('slider');
+  slider.innerHTML = ""; // Clear existing gallery
 
   // Replace the following with your own logic to fetch images for each project
 
 
-  var projectImages = images[projectName];
+  // var projectImages = images[projectName];
+  // slider.innerHTML = ''
 
-  enlargeImage(currentIndex);
+  for (var i = 0; i < images[projectName].length; i++) {
+    image = document.createElement('img');
+    image.src = 'assets/' + projectName + '/' + images[projectName][i];
+    image.className = 'slider-image'
+    slider.appendChild(image);
+  }
+
+  sliderImage = Array.from(document.querySelectorAll(".slider-image"));
+  index = 0
+
+
+  
+
+
+
+  // <img data-info="Image Description 1" class="slider-image" src="assets/01.jpeg"></img>
+
+  // enlargeImage(currentIndex);
 }
 
 
@@ -30,12 +61,16 @@ function checkKey(e) {
 
     e = e || window.event;
     if (e.keyCode == '37') {
-      currentIndex = (currentIndex - 1) % images[currentProject].length;
-      enlargedImage.src = images[currentProject][currentIndex];
+      i--;
+      moveImage();
+      // currentIndex = (currentIndex - 1) % images[currentProject].length;
+      // enlargedImage.src = images[currentProject][currentIndex];
     }
     else if (e.keyCode == '39') {
-      currentIndex = (currentIndex + 1) % images[currentProject].length;
-      enlargedImage.src = images[currentProject][currentIndex];
+      i++;
+      moveImage();
+      // currentIndex = (currentIndex + 1) % images[currentProject].length;
+      // enlargedImage.src = images[currentProject][currentIndex];
     }
 
 }
@@ -100,3 +135,5 @@ function navigateImages(index) {
   var enlargedImage = document.querySelector('.enlarged-image');
   enlargedImage.src = currentImage.src;
 }
+
+document.onkeydown = checkKey;
