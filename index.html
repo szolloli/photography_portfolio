@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>oliver szollosi</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4945/4945986.png">
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +18,15 @@
   <div class="menu">
     <h1>oliver szollosi</h1>
     <ul id="project-list">
-      <li class='selected-album'id='neuart' onclick="openGallery('neuart')">Editorial</li>
-      <li id='edge' onclick="openGallery('edge')">Edge</li>
       <li id='where_you_are' onclick="openGallery('where_you_are')">Where you are</li>
-      <li  id='contact' onclick="openGallery('contact')">Contact</li>
+      <li id='edge' onclick="openGallery('edge')">Edge</li>
+      <li id='protests' onclick="openGallery('protests')">Слава</li>
+      <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
+      <li id='neuart' onclick="openGallery('neuart')">Events</li>
+      
+      
+
+    <li  id='about' onclick="openContact()">About</li>
       <!-- Add more projects as needed -->
     </ul>
   </div>
@@ -31,7 +37,7 @@
 
 
 
-  <div class="arrow-content">
+  <div class="arrow-content" id="content">
     <div class="real-arrow-content">
     <p data-action="left" class='btn-chevron left bx bx-chevron-left'>
       <span class="material-symbols-outlined">
@@ -41,15 +47,7 @@
 
       <div class="content">
 
-        <div id="slider" class="slider">
-          <img data-info="Image Description 1" class="slider-image" src="assets/01.jpeg">
-          <!-- <img data-info="Image Description 2" class="slider-image" src="assets/neuart/000015.JPG">
-          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000017.JPG">
-          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000012.JPG">
-
-          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000025.JPG">
-
-          <img data-info="Image Description 3" class="slider-image" src="assets/neuart/000028.JPG"> -->
+        <div id="slider" class="slider slider-animated">
         </div>
 
       </div>
@@ -65,8 +63,8 @@
   </div>
 
   <script src="script.js"></script>
-  <script src="library.js"></script>
-  <script src="script1.js"></script>
+  <!-- <script src="script1.js"></script> -->
+  <!-- <script src="library.js"></script> -->
 </body>
 <footer>
   © 2023 Oliver Szöllösi | by RIGøSHI
