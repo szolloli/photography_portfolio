@@ -57,6 +57,7 @@ var currentProject = 'neuart';
 var currentIndex = 0;
 let i = 0;
 let sliderImage = [];
+let btnChevron = document.querySelectorAll(".btn-chevron");
 
 
 
@@ -107,6 +108,21 @@ let openGallery = (projectName) => {
     var content = document.getElementById("content");
     content.setHTML(gallery);
     slider = document.getElementById("slider");
+
+
+    btnChevron.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (btn.dataset.action == "right") {
+            i++;
+            return moveImage();
+        }
+        i--;
+        return moveImage();
+      })
+    })
+
+    btnChevron = document.querySelectorAll(".btn-chevron");
+
   }
   slider.innerHTML = ""; // Clear existing gallery
 
@@ -166,7 +182,6 @@ document.onkeydown = checkKey;
 
 const content = document.querySelector(".content");
 let slider = document.querySelector(".slider");
-const btnChevron = document.querySelectorAll(".btn-chevron");
 
 let reset = (container, clase) => {
     container.forEach(item => item.classList.remove(clase));
@@ -213,17 +228,15 @@ let moveImage = () => {
 };
 
 btnChevron.forEach(btn => {
-    btn.addEventListener('click', () => {
-        console.log('ic mi vric');
-        if (btn.dataset.action == "right") {
-            i++;
-            return moveImage();
-        }
-        i--;
+  btn.addEventListener('click', () => {
+    if (btn.dataset.action == "right") {
+        i++;
         return moveImage();
-    })
+    }
+    i--;
+    return moveImage();
+  })
 })
-
 // createIndicators();
 
 
