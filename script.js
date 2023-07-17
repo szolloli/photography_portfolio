@@ -109,10 +109,10 @@ let openGallery = (projectName) => {
     content.setHTML(gallery);
     slider = document.getElementById("slider");
 
-
+    btnChevron = document.querySelectorAll(".btn-chevron");
     btnChevron.forEach(btn => {
     btn.addEventListener('click', () => {
-        if (btn.dataset.action == "right") {
+        if (btn.className.includes("right")) {
             i++;
             return moveImage();
         }
@@ -121,7 +121,7 @@ let openGallery = (projectName) => {
       })
     })
 
-    btnChevron = document.querySelectorAll(".btn-chevron");
+    
 
   }
   slider.innerHTML = ""; // Clear existing gallery
