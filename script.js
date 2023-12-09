@@ -71,7 +71,7 @@ function openContact() {
   currentProject = 'about';
 
   var content = document.getElementById("content");
-  content.setHTML(about);
+  content.innerHTML = about;
 
 
 }
@@ -81,8 +81,7 @@ let resetCarousel = () => {
 
   const content = document.getElementsByClassName('content')[0];
   if (!content) return;
-  content.setHTML(`<div id="slider" class="slider">
-  </div>`)
+  content.innerHTML = `<div id="slider" class="slider"></div>`;
   slider = document.getElementById('slider');
 }
 
@@ -106,7 +105,7 @@ let openGallery = (projectName) => {
     // slider.className = 'slider';
 
     var content = document.getElementById("content");
-    content.setHTML(gallery);
+    content.innerHTML = gallery;
     slider = document.getElementById("slider");
 
     btnChevron = document.querySelectorAll(".btn-chevron");
