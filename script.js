@@ -102,6 +102,11 @@ let resetCarousel = () => {
 
 let initGallery = () => {
   sliderImage = Array.from(document.querySelectorAll(".slider-image"));
+  currentProject = "where_you_are"
+
+}
+
+let resetGallery = () => {
   if (document.getElementById('slider') == null) {
     // slider = document.createElement('div');
     // slider.id = 'slider';
@@ -144,7 +149,7 @@ let openGallery = (projectName) => {
   // var slider = document.getElementById('slider');
 
   slider.innerHTML = ""; // Clear existing gallery
-  initGallery()
+  resetGallery()
   // Replace the following with your own logic to fetch images for each project
 
 
@@ -170,7 +175,7 @@ let openGallery = (projectName) => {
 
 
 
-  // <img data-info="Image Description 1" class="slider-image" src="assets/01.jpeg"></img>
+  // <img data-info="Image Description 1" class="slider-image" fetchpriority="low" src="assets/01.jpeg"></img>
 
   // enlargeImage(currentIndex);
 }
