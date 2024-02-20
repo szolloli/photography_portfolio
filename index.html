@@ -1,73 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>oliver szollosi</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4945/4945986.png">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <head>
+    <title>oliver szollosi</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-</head>
-<body>
-  <a id="instagram" href="https://www.instagram.com/s.oliver.s/" target="_blank">instagram ↗</a>
-  <div class="menu">
-    <h1>oliver szollosi</h1>
-    <ul id="project-list">
-      <li id='where_you_are' onclick="openGallery('where_you_are')">Where you are</li>
-      <li id='edge' onclick="openGallery('edge')">Edge</li>
-      <li id='protests' onclick="openGallery('protests')">Слава</li>
-      <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
-      <li id='neuart' onclick="openGallery('neuart')">Events</li>
-      
-      
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;1000&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;1000&display=swap"
+        rel="stylesheet"
+        type="text/css"
+        />
+    </noscript>
+  </head>
+  <body>
+    <a id="instagram" href="https://www.instagram.com/s.oliver.s/"
+      target="_blank">instagram ↗</a>
+    <div class="menu">
+      <h1>oliver szollosi</h1>
+      <ul id="project-list">
+        <li id='where_you_are' class="selected-album"
+          onclick="openGallery('where_you_are')">Where you
+          are</li>
+        <li id='edge' onclick="openGallery('edge')">Edge</li>
+        <li id='protests' onclick="openGallery('protests')">Слава</li>
+        <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
+        <li id='neuart' onclick="openGallery('neuart')">Events</li>
 
-    <li  id='about' onclick="openContact()">About</li>
-      <!-- Add more projects as needed -->
-    </ul>
-  </div>
-  
-  <!-- <div id="gallery" class="gallery"> -->
+
+
+        <li id='about' onclick="openAbout()">About</li>
+        <!-- Add more projects as needed -->
+      </ul>
+    </div>
+
+    <!-- <div id="gallery" class="gallery"> -->
     <!-- Gallery images will be dynamically added here -->
-  <!-- </div> -->
+    <!-- </div> -->
 
 
 
-  <div class="arrow-content" id="content">
-    <div class="real-arrow-content">
-    <p data-action="left" class='btn-chevron left bx bx-chevron-left'>
-      <span class="material-symbols-outlined">
-        arrow_back_ios_new
-        </span>
-    </p>
+    <div class="arrow-content" id="content">
+      <div class="real-arrow-content">
+        <p data-action="left" class="btn-chevron left bx bx-chevron-left">
+          <span class="material-symbols-outlined">
+            &lt;</span>
+        </p>
 
-      <div class="content">
+        <div class="content">
 
-        <div id="slider" class="slider slider-animated">
+          <div id="slider" class="slider slider-animated"><div
+              class="image-wrap"><img src="assets/where_you_are/01.jpg"
+                class="slider-image slider-image-active"></div><div
+              class="image-wrap"><img src="assets/where_you_are/02.jpg"
+                class="slider-image"></div><div class="image-wrap"><img
+                src="assets/where_you_are/23.jpg" class="slider-image"></div><div
+              class="image-wrap"><img src="assets/where_you_are/04.jpg"
+                class="slider-image"></div><div class="image-wrap"><img
+                src="assets/where_you_are/07.jpg" class="slider-image"></div><div
+              class="image-wrap"><img src="assets/where_you_are/08.jpg"
+                class="slider-image"></div><div class="image-wrap"><img
+                src="assets/where_you_are/11.jpg" class="slider-image"></div><div
+              class="image-wrap"><img src="assets/where_you_are/09.jpg"
+                class="slider-image"></div></div>
+
         </div>
 
-      </div>
-
-      <p data-action="right" class='btn-chevron right bx bx-chevron-right'>
-        <span class="material-symbols-outlined">
-          arrow_forward_ios
+        <p data-action="right" class="btn-chevron right bx bx-chevron-right">
+          <span class="material-symbols-outlined">
+            &gt;
           </span>
-      </p>
+        </p>
       </div>
+    </div>
 
-    <!-- </div> -->
-  </div>
 
-  <script src="script.js"></script>
-  <!-- <script src="script1.js"></script> -->
-  <!-- <script src="library.js"></script> -->
-</body>
-<footer>
-  © 2023 Oliver Szöllösi | by RIGøSHI
-</footer>
+    <!-- <script src="script1.js"></script>
+    -->
+    <!-- <script src="library.js"></script> -->
+
+    <script src="script.js" defer></script>
+  </body>
+  <footer>
+    © 2023 Oliver Szöllösi | by RIGøSHI
+  </footer>
 </html>
-

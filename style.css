@@ -112,16 +112,13 @@ margin-top: 10vh;
 
   max-width: calc(55vw - 100px);
   width: inherit;
-  opacity: 1;
+  /* opacity: 0; */
   /* width: inherit; */
   /* height: inherit; */
   object-fit: contain;
   transition: 1s;
   margin: auto;
   padding: 50px;
-}
-.slider-image-active {
-  opacity: 1;
 }
 /* navigation */
 .btn-chevron {

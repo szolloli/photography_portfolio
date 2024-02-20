@@ -1,6 +1,3 @@
-
-
-//, 'assets/img005.jpg', 'assets/img006.jpg', 'assets/img008.jpg'],
 var images = {
     'neuart': ['000015.JPG','000012.JPG','000025.JPG','000017.JPG','000028.JPG','img004.jpg','img005.jpg','img015.jpg','img022.jpg','img024.jpg','img044.jpg','img054.jpg','img058.jpg','img080.jpg','img083.jpg','img084.jpg' ],
     'where_you_are': ['01.jpg', '02.jpg', '23.jpg', '04.jpg', '07.jpg', '08.jpg', '11.jpg', '09.jpg'],
@@ -33,9 +30,8 @@ var about = `
 var gallery = `
 <div class="real-arrow-content">
 <p data-action="left" class='btn-chevron left bx bx-chevron-left'>
-  <span class="material-symbols-outlined">
-    arrow_back_ios_new
-    </span>
+<span class="material-symbols-outlined">
+&lt;</span>
 </p>
 
   <div class="content">
@@ -46,9 +42,8 @@ var gallery = `
   </div>
 
   <p data-action="right" class='btn-chevron right bx bx-chevron-right'>
-    <span class="material-symbols-outlined">
-      arrow_forward_ios
-      </span>
+  <span class="material-symbols-outlined">
+  &gt;</span>
   </p>
   </div>
 `
@@ -61,7 +56,7 @@ let btnChevron = document.querySelectorAll(".btn-chevron");
 
 
 
-function openContact() {
+function openAbout() {
   var oldAlbum = document.getElementById(currentProject);
   oldAlbum.removeAttribute('class');
 
@@ -72,9 +67,29 @@ function openContact() {
 
   var content = document.getElementById("content");
   content.innerHTML = about;
-
-
 }
+
+// function preloadImages(array) {
+//   if (!preloadImages.list) {
+//       preloadImages.list = [];
+//   }
+//   var list = preloadImages.list;
+//   for (var i = 0; i < array.length; i++) {
+//       var img = new Image();
+//       img.onload = function() {
+//           var index = list.indexOf(this);
+//           if (index !== -1) {
+//               // remove image from the array once it's loaded
+//               // for memory consumption reasons
+//               list.splice(index, 1);
+//           }
+//       }
+//       list.push(img);
+//       img.src = array[i];
+//   }
+// }
+
+// preloadImages(["url1.jpg", "url2.jpg", "url3.jpg"]);
 
 let resetCarousel = () => {
   i = 0;
@@ -85,20 +100,8 @@ let resetCarousel = () => {
   slider = document.getElementById('slider');
 }
 
-let openGallery = (projectName) => {
-  if (i != 0) {
-    resetCarousel();
-  }
-  // setPosition(0);
-
-  var oldAlbum = document.getElementById(currentProject);
-  oldAlbum.removeAttribute('class');
-
-  var album = document.getElementById(projectName);
-  album.className = 'selected-album';
-
-  currentProject = projectName;
-  // var slider = document.getElementById('slider');
+let initGallery = () => {
+  sliderImage = Array.from(document.querySelectorAll(".slider-image"));
   if (document.getElementById('slider') == null) {
     // slider = document.createElement('div');
     // slider.id = 'slider';
@@ -123,8 +126,25 @@ let openGallery = (projectName) => {
     
 
   }
-  slider.innerHTML = ""; // Clear existing gallery
+}
 
+let openGallery = (projectName) => {
+  if (i != 0) {
+    resetCarousel();
+  }
+  // setPosition(0);
+
+  var oldAlbum = document.getElementById(currentProject);
+  oldAlbum.removeAttribute('class');
+
+  var album = document.getElementById(projectName);
+  album.className = 'selected-album';
+
+  currentProject = projectName;
+  // var slider = document.getElementById('slider');
+
+  slider.innerHTML = ""; // Clear existing gallery
+  initGallery()
   // Replace the following with your own logic to fetch images for each project
 
 
@@ -193,23 +213,6 @@ let createInfo = text => {
     content.appendChild(sliderInfo);
 };
 
-let createIndicators = () => {
-    const container = document.createElement("div");
-    container.className = "indicator";
-    content.appendChild(container)
-    sliderImage.forEach(image => {
-        let indicator = document.createElement("p");
-        indicator.textContent = sliderImage.indexOf(image) + 1;
-        container.appendChild(indicator);
-    })
-}
-
-let Image = (index) => {
-    const indicators = document.querySelectorAll('.indicator p');
-    sliderImage[index].classList.add('slider-image-active');
-
-}
-
 let setPosition = (index) => {
     let width = sliderImage[index].getBoundingClientRect().width;
     slider.style.transform = `translateX(-${width * index}px)`;
@@ -223,7 +226,6 @@ let moveImage = () => {
     }
     reset(sliderImage, 'slider-image-active');
     setPosition(i);
-    Image(i);
 };
 
 btnChevron.forEach(btn => {
@@ -236,12 +238,11 @@ btnChevron.forEach(btn => {
     return moveImage();
   })
 })
-// createIndicators();
 
 
 
 
-window.onload = openGallery('where_you_are');
+window.onload = initGallery();
 
 // let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
 Image(i);
