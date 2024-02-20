@@ -243,4 +243,3 @@ btnChevron.forEach(btn => {
 window.onload = initGallery();
 
 // let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
-Image(i);
