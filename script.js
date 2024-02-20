@@ -211,13 +211,6 @@ let reset = (container, clase) => {
     container.forEach(item => item.classList.remove(clase));
 }
 
-let createInfo = text => {
-    const sliderInfo = document.createElement("p");
-    sliderInfo.className = "slider-info";
-    sliderInfo.textContent = text;
-    content.appendChild(sliderInfo);
-};
-
 let setPosition = (index) => {
     let width = sliderImage[index].getBoundingClientRect().width;
     slider.style.transform = `translateX(-${width * index}px)`;
