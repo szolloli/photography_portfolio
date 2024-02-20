@@ -158,6 +158,7 @@ let openGallery = (projectName) => {
 
   for (var j = 0; j < images[projectName].length; j++) {
     image = document.createElement('img');
+    image.alt=""
     image.src = 'assets/' + projectName + '/' + images[projectName][j];
     image.className = 'slider-image';
 
