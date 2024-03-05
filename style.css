@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   color: #5e5e5e;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   text-underline-offset: 4px;
 }
 
@@ -42,7 +42,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  Justify-content: space-around;
+  justify-content: space-around;
 }
 
 .gallery img {
@@ -60,7 +60,7 @@ h1 {
   transition: all 0.75s;
 }
 .slider-image {
-  Max-height: 80vh;
+  max-height: 80vh;
   max-width: calc(55vw - 100px);
   width: inherit;
   object-fit: contain;
@@ -131,7 +131,6 @@ footer {
   position: absolute;
   top: 20px;
   right: 50px;
-  
 }
 
 .fl-rich-text {
@@ -139,16 +138,37 @@ footer {
   width: 60%;
 }
 
-a { text-decoration: none; color:rgb(0, 0, 0); }
-a:visited { text-decoration: none; color:rgb(0, 0, 0); }
-a:hover { text-decoration: underline; text-decoration-style: wavy; color:rgb(0, 0, 0); text-decoration-color: #feb0b0; }
-a:focus { text-decoration: none; color:rgb(0, 0, 0); }
-a:active { text-decoration: none; color:black }
+.invisible {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+a:visited {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  color: rgb(0, 0, 0);
+  text-decoration-color: #feb0b0;
+}
+a:focus {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+a:active {
+  text-decoration: none;
+  color: black;
+}
 
 a::selection {
-    color: #000000;
-    background: #e7e6e6;
-    text-shadow: none;
+  color: #000000;
+  background: #e7e6e6;
+  text-shadow: none;
 }
 
 .selected-album {
