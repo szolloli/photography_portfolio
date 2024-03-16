@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Oliver Szöllösi is a Slovak photographer,
       currently based in Prague, Czech Republic, primarily making work that
       explores his relationship to places where he grew up and people who he
@@ -11,7 +12,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta name="viewport">
 
     <link
       rel="preload"
@@ -30,7 +30,7 @@
   <body>
     <a id="instagram" href="https://www.instagram.com/s.oliver.s/"
       target="_blank">instagram ↗</a>
-    <div class="menu">
+    <div class="menu hidden-mobile">
       <h1>oliver szollosi</h1>
       <ul id="project-list">
         <li id='where_you_are' class="selected-album"
@@ -40,18 +40,23 @@
         <li id='protests' onclick="openGallery('protests')">Слава</li>
         <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
         <li id='neuart' onclick="openGallery('neuart')">Events</li>
-
-
-
         <li id='about' onclick="openAbout()">About</li>
-        <!-- Add more projects as needed -->
       </ul>
     </div>
 
-    <!-- <div id="gallery" class="gallery"> -->
-    <!-- Gallery images will be dynamically added here -->
-    <!-- </div> -->
-
+    <div class="menu mobile-only">
+      <h1>oliver szollosi</h1>
+      <ul id="project-list">
+        <li id='where_you_are' class="selected-album"
+          onclick="openGallery('where_you_are')">Where you
+          are</li>
+        <li id='edge' onclick="openGallery('edge')">Edge</li>
+        <li id='protests' onclick="openGallery('protests')">Слава</li>
+        <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
+        <li id='neuart' onclick="openGallery('neuart')">Events</li>
+        <li id='about' onclick="openAbout()">About</li>
+      </ul>
+    </div>
 
 
     <div class="arrow-content" id="content">
