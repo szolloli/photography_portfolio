@@ -224,9 +224,11 @@ let openGallery = (projectName) => {
     image.alt = "";
     image.src = "assets/" + projectName + "/" + images[projectName][j];
     image.className = "slider-image";
-    image.loading = "lazy";
+
     if (j == 0) {
       image.fetchPriority = "high";
+    } else {
+      image.loading = "lazy";
     }
 
     let imageContainer = document.createElement("div");
@@ -283,21 +285,21 @@ let moveImage = () => {
 
 initGallery();
 
-const tmp = () => {
-  const image = document.createElement("img");
-  image.src = "assets/" + "neuart" + "/" + "000015.JPG";
+// const tmp = () => {
+//   const image = document.createElement("img");
+//   image.src = "assets/" + "neuart" + "/" + "000015.JPG";
 
-  const image1 = document.createElement("img");
+//   const image1 = document.createElement("img");
 
-  image1.src = "assets/" + "editorial" + "/" + "000011.JPG";
+//   image1.src = "assets/" + "editorial" + "/" + "000011.JPG";
 
-  const image2 = document.createElement("img");
-  image2.src = "assets/" + "protests" + "/" + "01.jpg";
-  const image3 = document.createElement("img");
-  image3.src = "assets/" + "edge" + "/" + "szolloli_01_portret.jpeg";
-};
+//   const image2 = document.createElement("img");
+//   image2.src = "assets/" + "protests" + "/" + "01.jpg";
+//   const image3 = document.createElement("img");
+//   image3.src = "assets/" + "edge" + "/" + "szolloli_01_portret.jpeg";
+// };
 
-console.log("jupitiop");
-window.onload = tmp();
+// console.log("jupitiop");
+// window.onload = tmp();
 
 // let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
