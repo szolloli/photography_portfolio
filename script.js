@@ -224,6 +224,7 @@ let openGallery = (projectName) => {
     image.alt = "";
     image.src = "assets/" + projectName + "/" + images[projectName][j];
     image.className = "slider-image";
+    image.loading = "lazy";
     if (j == 0) {
       image.fetchPriority = "high";
     }
