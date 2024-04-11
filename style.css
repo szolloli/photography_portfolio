@@ -21,7 +21,7 @@ h1 {
   height: 100vh;
   float: left;
   color: #959595;
-  /* position: absolute; */
+  position: absolute;
 }
 
 .menu h1 {
@@ -108,7 +108,8 @@ i {
 }
 
 .content {
-  margin: auto;
+  /* display: flex; */
+  /* margin: auto; */
   overflow: hidden;
   width: calc(70vw);
   position: relative;
@@ -125,7 +126,7 @@ i {
   /* position: relative; */
   /* transition: 1s; */
   /* top: 20vh; */
-  /* margin: auto; */
+  margin: auto;
   /* margin-top: 30vh;
   margin-top: 30vh;
   margin-top: 30vh;
@@ -143,6 +144,11 @@ i {
   width: 80vw;
   padding-left: 10px;
   padding-right: 10px;
+}
+.containerik {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 footer {
@@ -257,6 +263,7 @@ a::selection {
     margin-top: 5vh;
     width: 100%;
     height: 10vh;
+    position: relative;
   }
   .menu li {
     font-size: x-small;
