@@ -270,6 +270,7 @@ let setPosition = (index) => {
 };
 
 let moveImage = () => {
+  console.log("hotov");
   if (i === sliderImage.length) {
     i = 0; // Si el contador ya llego al ultimo item, lo manda al primer item.
   } else if (i == -1) {
@@ -280,8 +281,22 @@ let moveImage = () => {
 };
 
 initGallery();
-// window.onload = () => {
 
-// };
+const tmp = () => {
+  const image = document.createElement("img");
+  image.src = "assets/" + "neuart" + "/" + "000015.JPG";
+
+  const image1 = document.createElement("img");
+
+  image1.src = "assets/" + "editorial" + "/" + "000011.JPG";
+
+  const image2 = document.createElement("img");
+  image2.src = "assets/" + "protests" + "/" + "01.jpg";
+  const image3 = document.createElement("img");
+  image3.src = "assets/" + "edge" + "/" + "szolloli_01_portret.jpeg";
+};
+
+console.log("jupitiop");
+window.onload = tmp();
 
 // let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
