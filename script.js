@@ -102,6 +102,7 @@ var currentIndex = 0;
 let i = 0;
 let sliderImage = [];
 let btnChevron = document.querySelectorAll(".btn-chevron");
+let mobileButtons = document.querySelectorAll(".mobile-arrow");
 
 function openAbout() {
   var oldAlbum = document.getElementById(currentProject);
@@ -149,6 +150,17 @@ let resetCarousel = () => {
 
 let initGallery = () => {
   sliderImage = Array.from(document.querySelectorAll(".slider-image"));
+  const gallery = document.getElementById("content");
+  document.addEventListener("swiped-left", () => {
+    i++;
+    moveImage();
+  });
+
+  document.addEventListener("swiped-right", () => {
+    console.log("swpied");
+    i--;
+    moveImage();
+  });
   currentProject = "where_you_are";
 };
 
@@ -242,7 +254,7 @@ let reset = (container, clase) => {
 
 let setPosition = (index) => {
   let width = sliderImage[index].getBoundingClientRect().width;
-  slider.style.transform = `translateX(-${(width + 20) * index}px)`;
+  slider.style.transform = `translateX(-${(width + 20) * index + 10}px)`;
 };
 
 let moveImage = () => {
@@ -252,10 +264,22 @@ let moveImage = () => {
     i = sliderImage.length - 1; // Si llego al primero lo manda hasta el ultimo.
   }
   reset(sliderImage, "slider-image-active");
+  console.log("noo je to", i, sliderImage.length);
   setPosition(i);
 };
 
 btnChevron.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.dataset.action == "right") {
+      i++;
+      return moveImage();
+    }
+    i--;
+    return moveImage();
+  });
+});
+
+mobileButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (btn.dataset.action == "right") {
       i++;
