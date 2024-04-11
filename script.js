@@ -184,6 +184,7 @@ let resetGallery = () => {
 };
 
 let openGallery = (projectName) => {
+  console.log("opening");
   if (i != 0) {
     resetCarousel();
   }

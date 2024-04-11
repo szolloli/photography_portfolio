@@ -18,6 +18,7 @@ h1 {
 
 .menu {
   /* width: 200px; */
+  z-index: 2;
   height: 100vh;
   float: left;
   color: #959595;
@@ -83,14 +84,17 @@ h1 {
 i {
   background: #feb0b0;
 }
-
 .bx-chevron-left {
+  cursor: pointer;
+  margin-left: -50px;
   font-size: x-large;
   position: absolute;
   top: 50%;
 }
 
 .bx-chevron-right {
+  cursor: pointer;
+  margin-right: -50px;
   font-size: x-large;
   position: absolute;
   right: 0;
@@ -123,7 +127,7 @@ i {
   /* display: flex; */
   /* justify-content: center; */
   /* flex-direction: row; */
-  /* position: relative; */
+  position: relative;
   /* transition: 1s; */
   /* top: 20vh; */
   margin: auto;
@@ -209,19 +213,6 @@ a::selection {
 .selected-album {
   font-style: italic;
   color: #feb0b0;
-}
-
-@media (max-width: 640px) {
-  .hidden-mobile {
-    display: none;
-  }
-  /* .image-wrap {
-    width: 90vw;
-  } */
-}
-
-.mobile-only {
-  display: none;
 }
 
 @media (max-width: 768px) {
