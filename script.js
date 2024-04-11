@@ -276,8 +276,9 @@ let moveImage = () => {
   setPosition(i);
 };
 
-window.onload = () => {
-  initGallery();
-};
+initGallery();
+// window.onload = () => {
+
+// };
 
 // let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
