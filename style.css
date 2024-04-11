@@ -1,11 +1,11 @@
 body {
   display: flex;
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
   color: #5e5e5e;
   font-family: "Nunito", sans-serif;
-  /* text-underline-offset: 4px; */
   border-width: 4px;
   border-color: #000000;
 }
@@ -14,10 +14,13 @@ h1 {
   color: black;
   font-weight: 500;
   font-size: large;
+  user-select: none;
+  cursor: pointer;
 }
 
 .menu {
-  /* width: 200px; */
+  top: 15vh;
+  left: 50px;
   z-index: 2;
   height: 100vh;
   float: left;
@@ -38,16 +41,17 @@ h1 {
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 .menu li {
-  padding: 10px 20px;
+  padding: 10px 0px;
   cursor: pointer;
 }
 
 .slider {
   height: inherit;
-  width: 70vh;
+  width: 60vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -57,12 +61,10 @@ h1 {
 }
 .slider-image {
   max-height: 70vh;
-  max-width: calc(70vw);
+  max-width: calc(60vw);
   width: inherit;
   object-fit: contain;
   transition: 1s;
-  /* margin: auto; */
-  /* padding: 50px; */
 }
 .btn-chevron {
   position: absolute;
@@ -74,12 +76,6 @@ h1 {
   padding: 0.5rem;
   cursor: pointer;
   transition: 1s;
-}
-.left {
-  /* left: -0.9rem; */
-}
-.right {
-  /* right: -0.9rem; */
 }
 i {
   background: #feb0b0;
@@ -102,39 +98,25 @@ i {
 }
 
 .mobile-arrow {
-  /* position: absolute; */
-  /* background-color: #000000; */
-  /* opacity: 0; */
   background-color: transparent;
   width: 50%;
   height: 100%;
   z-index: 2;
+  user-select: none;
 }
 
 .content {
-  /* display: flex; */
-  /* margin: auto; */
   overflow: hidden;
-  width: calc(70vw);
+  width: calc(60vw);
   position: relative;
   flex-direction: row;
-  /* margin-top: 10vh; */
   align-items: center;
   transition: 1s;
 }
 
 .arrow-content {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: row; */
   position: relative;
-  /* transition: 1s; */
-  /* top: 20vh; */
   margin: auto;
-  /* margin-top: 30vh;
-  margin-top: 30vh;
-  margin-top: 30vh;
-  margin-top: 10vh; */
 }
 
 .real-arrow-content {
@@ -145,7 +127,7 @@ i {
 }
 
 .image-wrap {
-  width: 80vw;
+  width: 60vw;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -158,7 +140,6 @@ i {
 footer {
   color: black;
   font-size: small;
-  /* position: absolute; */
   margin-top: auto;
   width: 100%;
   text-align: center;
@@ -172,6 +153,7 @@ footer {
 }
 
 .fl-rich-text {
+  padding-top: 10vh;
   margin: 0px auto;
   width: 60%;
   margin-bottom: 10vh;
@@ -210,11 +192,30 @@ a::selection {
   text-shadow: none;
 }
 
+.mobile-onl-change {
+  display: flex;
+  /* position: relative; */
+  flex-direction: column;
+  max-height: 30vh;
+}
+
 .selected-album {
   font-style: italic;
   color: #feb0b0;
 }
 
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+#insta {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  margin: 0 0;
+}
 @media (max-width: 768px) {
   .hidden-mobile {
     display: none;
@@ -223,47 +224,41 @@ a::selection {
     display: flex;
     flex-direction: column;
   }
-  #insta {
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    margin: 0 0;
-    color: #feb0b0;
-  }
+
   #instagram {
     text-decoration: underline;
-  }
-  .mobile-only {
-    display: flex;
   }
   .project-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  .menu .mobile-only {
-    /* position: relative; */
-    /* max-height: 10vh; */
-    display: flex;
+  .menu .mobile-onl-change {
     margin-left: auto;
     align-items: center;
 
     margin-top: 6vh;
   }
   .menu {
-    margin-top: 5vh;
+    margin-top: 7vh;
     width: 100%;
     height: 10vh;
+    top: 0;
+    left: 0;
     position: relative;
   }
+  .fl-rich-text {
+    width: 75vw;
+    padding: 0 10vw;
+  }
   .menu li {
-    font-size: x-small;
+    font-size: small;
     padding: 0px;
     cursor: pointer;
   }
   .content {
     width: calc(95vw);
-    min-height: 60vh;
+    min-height: 65vh;
     display: flex;
   }
   .image-wrap {
@@ -278,11 +273,13 @@ a::selection {
     align-self: center;
   }
   .menu ul {
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
-    padding: 0vh 4vw;
     align-items: center;
     margin: auto;
     width: 100%;
+    position: relative;
     max-height: 5vh;
     justify-content: space-around;
   }
@@ -293,18 +290,14 @@ a::selection {
     display: flex;
     flex-direction: column;
   }
-  /* .image-wrap {
-    width: 90vw;
-  } */
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 640px) {
   .real-arrow-content {
     margin-left: calc(20vw - 200px);
   }
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
 }

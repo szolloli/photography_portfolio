@@ -12,7 +12,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;1000&display=swap"
@@ -28,41 +27,29 @@
     </noscript>
   </head>
   <body>
-    <h1 class="mobile-only" id="insta">oliver szollosi</h1>
+    <a onclick="openGallery('where_you_are')"><h1 id="insta">oliver szollosi</h1></a>
     <a id="instagram" href="https://www.instagram.com/s.oliver.s/"
       target="_blank">instagram ↗</a>
-    <div class="menu hidden-mobile">
-      <h1>oliver szollosi</h1>
-      <ul id="project-list">
-        <li id='where_you_are' class="selected-album"
-          onclick="openGallery('where_you_are')">Where you
-          are</li>
-        <li id='edge' onclick="openGallery('edge')">Edge</li>
-        <li id='protests' onclick="openGallery('protests')">Слава</li>
-        <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
-        <li id='neuart' onclick="openGallery('neuart')">Events</li>
-        <li id='about' onclick="openAbout()">About</li>
-      </ul>
-    </div>
+
 
 
 
     <div class="containerik" style="min-height: 100vh">
-      <div class="menu mobile-only">
+      <div class="menu mobile-onl-change">
         <!-- <h1>oliver szollosi</h1> -->
-        <ul id="project-list" class="row">
+        <ul id="project-list" class="mobile-row">
           <li id='where_you_are' class="selected-album"
             onclick="openGallery('where_you_are')">Where you
             are</li>
-          |
+          <span class="mobile-only">|</span>
           <li id='edge' onclick="openGallery('edge')">Edge</li>
-          |
+          <span class="mobile-only">|</span>
           <li id='protests' onclick="openGallery('protests')">Слава</li>
-          |
+          <span class="mobile-only">|</span>
           <li id='editorial' onclick="openGallery('editorial')">Editorial</li>
-          |
+          <span class="mobile-only">|</span>
           <li id='neuart' onclick="openGallery('neuart')">Events</li>
-          |
+          <span class="mobile-only">|</span>
           <li id='about' onclick="openAbout()">About</li>
         </ul>
       </div>
@@ -74,31 +61,38 @@
           <div data-action="left" class="mobile-arrow mobile-arrow-left">
             <div class="hidden-mobile bx-chevron-left"><</div>
             </div>
-            <div data-action="right" class="mobile-arrow mobile-arrow-right">
+            <div data-action="right" class="mobile-arrow
+              mobile-arrow-right">
               <div class="hidden-mobile bx-chevron-right">></div>
             </div>
           </div>
           <div class="content">
 
             <div id="slider" class="slider slider-animated"><div
-                class="image-wrap"><img alt="" src="assets/where_you_are/01.jpg"
-                  class="slider-image slider-image-active" fetchpriority="high"></div><div
-                class="image-wrap"><img alt="" src="assets/where_you_are/02.jpg"
+                class="image-wrap"><img alt=""
+                  src="assets/where_you_are/01.jpg"
+                  class="slider-image slider-image-active"
+                  fetchpriority="high"></div><div
+                class="image-wrap"><img alt=""
+                  src="assets/where_you_are/02.jpg"
                   class="slider-image" fetchpriority="high"></div><div
                 class="image-wrap"><img alt=""
                   src="assets/where_you_are/23.jpg" class="slider-image"
                   fetchpriority="high"></div><div
-                class="image-wrap"><img alt="" src="assets/where_you_are/04.jpg"
+                class="image-wrap"><img alt=""
+                  src="assets/where_you_are/04.jpg"
                   class="slider-image" fetchpriority="high"></div><div
                 class="image-wrap"><img alt=""
                   src="assets/where_you_are/07.jpg" class="slider-image"
                   fetchpriority="high"></div><div
-                class="image-wrap"><img alt="" src="assets/where_you_are/08.jpg"
+                class="image-wrap"><img alt=""
+                  src="assets/where_you_are/08.jpg"
                   class="slider-image" fetchpriority="high"></div><div
                 class="image-wrap"><img alt=""
                   src="assets/where_you_are/11.jpg" class="slider-image"
                   fetchpriority="high"></div><div
-                class="image-wrap"><img alt="" src="assets/where_you_are/09.jpg"
+                class="image-wrap"><img alt=""
+                  src="assets/where_you_are/09.jpg"
                   class="slider-image" fetchpriority="high"></div>
 
 
@@ -217,7 +211,7 @@
           <!-- </div> -->
         </div>
         <footer>
-          © 2023 Oliver Szöllösi | by RIGøSHI
+          © 2024 Oliver Szöllösi | by RIGøSHI
         </footer>
 
 

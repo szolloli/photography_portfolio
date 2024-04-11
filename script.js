@@ -59,7 +59,7 @@ var images = {
 
 var about = `
 <div class="fl-rich-text">
-<p class="p1"><span class="s1">Oliver Szöllösi is a Slovak photographer, currently based in Prague, Czech Republic, primarily making work that explores his relationship to places where he grew up and people who he grew up with.</span></p>
+<p class="p1"><span class="s1"><span style="font-style: italic">Oliver Szöllösi</span> is a Slovak photographer, currently based in Prague, Czech Republic, primarily making work that explores his relationship to places where he grew up and people who he grew up with.</span></p>
 <p>Oliver also explores the boundaries of today's photography through experiments with generative neural networks trained on his own photographs.</p>
 <p>For inquiries, commissions and print sales please email Oliver directly:</p>
 <p class="p1"><b>oliver.szollosi1(at)gmail.com</b></p>
@@ -78,14 +78,17 @@ var about = `
 
 var gallery = `
 
-
-  <div class="content">
-  <div data-action="left" class="mobile-arrow mobile-arrow-left">
+<div style="position: absolute; width: 100%; height: 100%;
+flex-direction:row; display: flex;">
+<div data-action="left" class="mobile-arrow mobile-arrow-left">
   <div class="hidden-mobile bx-chevron-left"><</div>
   </div>
   <div data-action="right" class="mobile-arrow mobile-arrow-right">
     <div class="hidden-mobile bx-chevron-right">></div>
   </div>
+</div>
+  <div class="content">
+
     <div id="slider" class="slider">
     </div>
 
@@ -152,39 +155,48 @@ let initGallery = () => {
   });
 
   document.addEventListener("swiped-right", () => {
-    console.log("swpied");
     i--;
     moveImage();
   });
+
+  mobileButtons = document.querySelectorAll(".mobile-arrow");
+  mobileButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.action == "right") {
+        i++;
+        return moveImage();
+      }
+      i--;
+      return moveImage();
+    });
+  });
+
   currentProject = "where_you_are";
 };
 
 let resetGallery = () => {
-  if (document.getElementById("slider") == null) {
-    // slider = document.createElement('div');
-    // slider.id = 'slider';
-    // slider.className = 'slider';
+  // slider = document.createElement('div');
+  // slider.id = 'slider';
+  // slider.className = 'slider';
 
-    var content = document.getElementById("content");
-    content.innerHTML = gallery;
-    slider = document.getElementById("slider");
+  var content = document.getElementById("content");
+  content.innerHTML = gallery;
+  slider = document.getElementById("slider");
 
-    btnChevron = document.querySelectorAll(".btn-chevron");
-    btnChevron.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.className.includes("right")) {
-          i++;
-          return moveImage();
-        }
-        i--;
+  mobileButtons = document.querySelectorAll(".mobile-arrow");
+  mobileButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.action == "right") {
+        i++;
         return moveImage();
-      });
+      }
+      i--;
+      return moveImage();
     });
-  }
+  });
 };
 
 let openGallery = (projectName) => {
-  console.log("opening");
   if (i != 0) {
     resetCarousel();
   }
@@ -200,12 +212,13 @@ let openGallery = (projectName) => {
   // var slider = document.getElementById('slider');
 
   slider.innerHTML = ""; // Clear existing gallery
-  resetGallery();
+  if (document.getElementById("slider") == null) {
+    resetGallery();
+  }
   // Replace the following with your own logic to fetch images for each project
 
   // var projectImages = images[projectName];
   // slider.innerHTML = ''
-
   for (var j = 0; j < images[projectName].length; j++) {
     image = document.createElement("img");
     image.alt = "";
@@ -260,32 +273,11 @@ let moveImage = () => {
     i = sliderImage.length - 1; // Si llego al primero lo manda hasta el ultimo.
   }
   reset(sliderImage, "slider-image-active");
-  console.log("noo je to", i, sliderImage.length);
   setPosition(i);
 };
 
-btnChevron.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (btn.dataset.action == "right") {
-      i++;
-      return moveImage();
-    }
-    i--;
-    return moveImage();
-  });
-});
-
-mobileButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (btn.dataset.action == "right") {
-      i++;
-      return moveImage();
-    }
-    i--;
-    return moveImage();
-  });
-});
-
-window.onload = initGallery();
+window.onload = () => {
+  initGallery();
+};
 
 // let sliderImage = Array.from(document.querySelectorAll(".slider-image"));
