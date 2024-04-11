@@ -21,7 +21,6 @@ h1 {
   height: 100vh;
   float: left;
   color: #959595;
-
   position: absolute;
 }
 
@@ -114,7 +113,7 @@ i {
   width: calc(70vw);
   position: relative;
   flex-direction: row;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   align-items: center;
   transition: 1s;
 }
@@ -122,9 +121,9 @@ i {
 .arrow-content {
   /* display: flex; */
   /* flex-direction: row; */
-  /* position: relative; */
+  position: relative;
   /* transition: 1s; */
-  top: 10vh;
+  top: 20vh;
   margin: auto;
   /* margin-top: 30vh;
   margin-top: 30vh;
@@ -233,35 +232,49 @@ a::selection {
   .mobile-only {
     display: flex;
   }
-  menu {
+  .project-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu .mobile-only {
+    /* position: relative; */
+    /* max-height: 10vh; */
     display: flex;
     margin-left: auto;
     align-items: center;
-    width: 100vw;
 
     margin-top: 6vh;
   }
-  /* .menu {
-    height: auto;
-  } */
+  .menu {
+    width: 100%;
+  }
   .menu li {
     font-size: x-small;
-    padding: 10px 10px;
+    padding: 0px;
     cursor: pointer;
   }
-  content {
-    width: calc(85vw);
+  .content {
+    width: calc(95vw);
   }
-  slider-image {
-    width: 85vh;
+  .image-wrap {
+    width: 95vw;
   }
-  slider {
-    width: 85vh;
+  .slider-image {
+    width: 95vw;
+    max-width: 95vw;
+  }
+  .slider {
+    width: 95vw;
   }
   .menu ul {
     list-style-type: none;
+    padding: 0vh 4vw;
     align-items: center;
-    margin: auto;
+    margin-top: 10vh;
+    width: 100%;
+    max-height: 5vh;
+    justify-content: space-around;
   }
 
   body {
