@@ -77,23 +77,18 @@ var about = `
 </div>`;
 
 var gallery = `
-<div class="real-arrow-content">
-<p data-action="left" class='btn-chevron left bx bx-chevron-left'>
-<span class="material-symbols-outlined">
-&lt;</span>
-</p>
+
 
   <div class="content">
-
+  <div data-action="left" class="mobile-arrow mobile-arrow-left">
+  <div class="hidden-mobile bx-chevron-left"><</div>
+  </div>
+  <div data-action="right" class="mobile-arrow mobile-arrow-right">
+    <div class="hidden-mobile bx-chevron-right">></div>
+  </div>
     <div id="slider" class="slider">
     </div>
 
-  </div>
-
-  <p data-action="right" class='btn-chevron right bx bx-chevron-right'>
-  <span class="material-symbols-outlined">
-  &gt;</span>
-  </p>
   </div>
 `;
 
